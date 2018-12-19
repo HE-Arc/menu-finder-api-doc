@@ -10,9 +10,6 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants"
 
 ```json
 {
-	"links": {
-		"self": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants"
-	},
 	"data": [{
 		"type": "restaurants",
 		"id": "1",
@@ -27,16 +24,12 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants"
 			"address": "Fake Street 42",
 			"zip": "2300",
 			"city": "Foobar City",
-			"avatar": "https://menufinder.com/pictures/restaurants/1.jpg",
+			"avatar": "https://menufinder.srvz-webapp.he-arc.ch//storage/avatars/1.jpg",
 			"website": "https://www.example.com",
 			"description": "The best place where to eat!"
 		},
-		"relationships": {
-			"menus": {
-				"links": {
-					"related": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/1/menus"
-				}
-			}
+		"links": {
+			"self": "https://menufinder.srvz-webapp.he-arc.ch//api/beta/restaurants/1"
 		}
 	}, {
 		"type": "restaurants",
@@ -52,34 +45,22 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants"
 			"address": "Fake Street 24",
 			"zip": "2000",
 			"city": "Barfoo City",
-			"avatar": "https://menufinder.com/pictures/restaurants/2.jpg",
+			"avatar": "https://menufinder.srvz-webapp.he-arc.ch//storage/avatars/2.jpg",
 			"website": "https://www.example.net",
 			"description": "The worst place where to eat!"
 		},
-		"relationships": {
-			"menus": {
-				"links": {
-					"related": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/2/menus"
-				}
-			}
+		"links": {
+			"self": "https://menufinder.srvz-webapp.he-arc.ch//api/beta/restaurants/2"
 		}
 	}]
 }
 ```
 
-This endpoint retrieves all restaurants or a list of restaurants within a certain radius of a given position.
+This endpoint retrieves all restaurants.
 
 ### HTTP Request
 
 `GET /api/beta/restaurants`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-lat | ``null`` | Geospatial query's latitude. If defined, then ``lng`` and ``radius`` query parameters must also be defined.
-lng | ``null`` | Geospatial query's longitude. If defined, then ``lat`` and ``radius`` query parameters must also be defined.
-radius | ``null`` | Geospatial query's radius. If defined, then ``lat`` and ``lng`` query parameters must also be defined.
 
 ## Get a Specific Restaurant
 
@@ -91,9 +72,6 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/1"
 
 ```json
 {
-	"links": {
-		"self": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/1"
-	},
 	"data": {
 		"type": "restaurants",
 		"id": "1",
@@ -102,13 +80,13 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/1"
 			"active": true,
 			"rate": 4.9,
 			"location": {
-				"lat": 0.0,
-				"lng": 0.0
+				"lat": 47.1034892,
+				"lng": 6.8327838
 			},
 			"address": "Fake Street 42",
 			"zip": "2300",
 			"city": "Foobar City",
-			"avatar": "https://menufinder.com/pictures/restaurants/1.jpg",
+			"avatar": "https://menufinder.srvz-webapp.he-arc.ch//storage/avatars/1.jpg",
 			"website": "https://www.example.com",
 			"description": "The best place where to eat!"
 		},
@@ -119,6 +97,9 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/1"
 				}
 			}
 		}
+	},
+	"links": {
+		"self": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/restaurants/1"
 	}
 }
 ```

@@ -10,21 +10,14 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories"
 
 ```json
 {
-	"links": {
-		"self": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories"
-	},
 	"data": [{
 		"type": "categories",
 		"id": "1",
 		"attributes": {
 			"name": "Chasse"
 		},
-		"relationships": {
-			"menus": {
-				"links": {
-					"related": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories/1/menus"
-				}
-			}
+		"links": {
+			"self": "https://menufinder.srvz-webapp.he-arc.ch//api/beta/categories/1"
 		}
 	}, {
 		"type": "categories",
@@ -32,12 +25,8 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories"
 		"attributes": {
 			"name": "Végétarien"
 		},
-		"relationships": {
-			"menus": {
-				"links": {
-					"related": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories/2/menus"
-				}
-			}
+		"links": {
+			"self": "https://menufinder.srvz-webapp.he-arc.ch//api/beta/categories/2"
 		}
 	}]
 }
@@ -60,22 +49,15 @@ curl "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories/1"
 
 ```json
 {
-	"links": {
-		"self": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories/1"
-	},
 	"data": {
 		"type": "categories",
 		"id": "1",
 		"attributes": {
 			"name": "Chasse"
-		},
-		"relationships": {
-			"menus": {
-				"links": {
-					"related": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories/1/menus"
-				}
-			}
 		}
+	},
+	"links": {
+		"self": "https://menufinder.srvz-webapp.he-arc.ch/api/beta/categories/1"
 	}
 }
 ```
